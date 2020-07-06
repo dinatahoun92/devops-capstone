@@ -8,13 +8,13 @@ pipeline {
     }
     stage('Build Docker Image') {
       steps {
-        sh 'docker build -t webserver-image:v1 .'
+        sh 'sudo docker build -t webserver-image:v1 .'
       }
     }
     stage('Push to Dockerhub') {
       steps {
      withDockerRegistry([credentialsId: "docker",url: ""]) {
-        sh 'docker push dinatahoun/devops-capstone'
+        sh 'sudo docker push dinatahoun/devops-capstone'
                 }
             }
         }
