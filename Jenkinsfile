@@ -13,7 +13,7 @@ pipeline {
     }
     stage('Push to Dockerhub') {
       steps {
-     withDockerRegistry([credentialsId: "docker"]) {
+     withDockerRegistry([credentialsId: "docker",url: ""]) {
         sh 'docker push dinatahoun/devops-capstone'
                 }
             }
