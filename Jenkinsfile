@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Build Docker Image') {
       steps {
-        sh 'docker build -t webserver-image:v1 .'
+        sh 'docker build -t dinatahoun/devops-capstone'
       }
     }
     stage('Push to Dockerhub') {
