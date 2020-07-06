@@ -15,7 +15,8 @@ pipeline {
       steps {
      withDockerRegistry([credentialsId: "docker"]) {
         sh 'docker push dinatahoun/devops-capstone'
+                }
+            }
         }
-      }
     }
 }
