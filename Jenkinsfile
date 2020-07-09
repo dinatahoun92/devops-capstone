@@ -18,5 +18,13 @@ pipeline {
                 }
             }
         }
+        stage('Deployment') {
+              steps{
+                  withAWS(credentials: 'aws', region: 'us-west-2') {
+                      sh "kubectl get deployment"
+                    
+                  }
+              }
+        }
     }
 }
