@@ -30,6 +30,6 @@ pipeline {
                       sh "kubectl get service/capston"
                   }
               }
-        }
+        
     }
 }
