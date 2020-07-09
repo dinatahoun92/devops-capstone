@@ -19,7 +19,8 @@ pipeline {
             }
         }
         stage('Deployment') {
-               withAWS(credentials: 'aws', region: 'us-west-2') {
+                steps {
+         withAWS(credentials: 'aws', region: 'us-west-2') {
                       sh "aws eks --region us-west-2 update-kubeconfig --name capston"
                       sh "kubectl config use-context arn:arn:aws:eks:us-west-2:127541518877:cluster/capston"
                       sh "kubectl set image deploy dinatahoun/devops-capstone"
@@ -30,6 +31,6 @@ pipeline {
                       sh "kubectl get service/capston"
                   }
               }
-        
+        }
     }
 }
