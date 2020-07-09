@@ -24,7 +24,7 @@ pipeline {
                       sh "aws eks update-kubeconfig --name capston"
                       sh "kubectl config use-context arn:aws:eks:us-west-2:127541518877:cluster/capston"
                       sh "kubectl set image deploy dinatahoun/devops-capstone"
-                      sh "kubectl apply -f deployment/deploy.yml"
+                      sh "kubectl apply -f deploy.yml"
                   }
               }
         }
